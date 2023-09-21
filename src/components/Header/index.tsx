@@ -26,7 +26,12 @@ const Header = () => {
           <S.IconSearchInput src="/search-icon.svg" alt="search-icon-menu" />
         </S.ContainerInput>
 
-        <S.ContainerIconCartProducts>
+        <S.ContainerIconCartProducts
+          onClick={() => {
+            push("/checkout");
+            setToggle("false");
+          }}
+        >
           <S.IconCartMenu src="/cart-icon.svg" alt="icon-cart-menu" />
           <S.CountProducts>0</S.CountProducts>
         </S.ContainerIconCartProducts>
@@ -34,9 +39,12 @@ const Header = () => {
 
       <>
         {toggle === "false" ? (
-          <S.ButtonOpenMenuMobile onClick={handleOpenMenu} visible={toggle} />
+          <S.ButtonOpenMenuMobile
+            onClick={handleOpenMenu}
+            visible={`${toggle}`}
+          />
         ) : (
-          <S.ButtonCloseMobile onClick={handleOpenMenu} visible={toggle} />
+          <S.ButtonCloseMobile onClick={handleOpenMenu} visible={`${toggle}`} />
         )}
 
         {
@@ -45,7 +53,7 @@ const Header = () => {
               transform:
                 toggle === "true" ? "translateX(0)" : "translateX(-500px)",
             }}
-            visible={toggle}
+            visible={`${toggle}`}
           >
             <S.InputSearchProductsMobile placeholder="Procurando por algo específico?" />
             <S.ButtonOpenCheckoutMobile

@@ -59,6 +59,7 @@ export const IconSearchInput = styled.img`
 `;
 
 export const ContainerIconCartProducts = styled.div`
+  cursor: pointer;
   position: relative;
 `;
 
@@ -105,6 +106,7 @@ export const ButtonOpenMenuMobile = styled(IoMenuSharp)`
 `;
 
 export const ButtonCloseMobile = styled(AiFillCloseCircle)<PropsMenuMobile>`
+  display: none;
   @media (max-width: 800px) {
     display: block;
     font-size: 2.8em;

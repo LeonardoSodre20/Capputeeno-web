@@ -1,3 +1,9 @@
-export default function Home() {
-  return <h1>Hello World</h1>;
-}
+"use client";
+
+import TabNavigator from "@/components/TabNavigator";
+
+const Home = () => {
+  return <TabNavigator />;
+};
+
+export default Home;

@@ -2,6 +2,7 @@
 
 import Header from "@/components/Header";
 import { GlobalStyle } from "@/theme/theme";
+import StyledComponentsRegistry from "./registry";
 
 export default function RootLayout({
   children,
@@ -10,10 +11,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <GlobalStyle />
       <body>
-        <Header />
-        {children}
+        <StyledComponentsRegistry>
+          <GlobalStyle />
+          <Header />
+          {children}
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
