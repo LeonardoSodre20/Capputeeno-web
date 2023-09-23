@@ -13,7 +13,6 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         outline: none;
         box-sizing: border-box;
-        
     }
 
     body {
@@ -26,5 +25,6 @@ export const GlobalStyle = createGlobalStyle`
         font-family: ${saira.style.fontFamily};
         background-color: #F0F0F5;
         overflow-x: hidden;
+        overflow-y: auto;
     }
 `;

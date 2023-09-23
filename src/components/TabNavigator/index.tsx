@@ -1,14 +1,33 @@
 "use client";
 
+import { useState } from "react";
 import * as S from "./styles";
+
+// UTILS
+import { links } from "./links";
+
+const Links = () => {
+  const [id, setId] = useState<number>(0);
+
+  return Array.from(links, (item, index) => {
+    return (
+      <S.TabLink
+        key={item.id}
+        onClick={() => setId(index)}
+        weigth={index === id ? "700" : "400"}
+        border={index === id ? "4px solid #FFA585" : "4px solid transparent"}
+      >
+        {item.name}
+      </S.TabLink>
+    );
+  });
+};
 
 const TabNavigator = () => {
   return (
     <S.WrapperTabNavigator>
       <S.ContainerTabLinks>
-        <S.TabLink>Todos os produtos</S.TabLink>
-        <S.TabLink>Camisetas</S.TabLink>
-        <S.TabLink>Canecas</S.TabLink>
+        <Links />
       </S.ContainerTabLinks>
 
       <S.SelectFilterProducts>
